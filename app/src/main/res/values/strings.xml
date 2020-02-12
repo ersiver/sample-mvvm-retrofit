@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MovieToWatch</string>
+
+    <string name="contentDesc">image</string>
+
+    <string name="searchHint"><i>Start typing</i></string>
+
+    <string name="saved">Saved movies</string>
+
+    <string name="movie_details">Movie details</string>
+
+    <string name="per_ten">/10</string>
+
+    <string name="parenthesis_left">(</string>
+
+    <string name="parenthesis_right">)</string>
+
+    <string name="rating">rating:</string>
+
+    <string name="released">released:</string>
+
+    <string name="language">language:</string>
+
+</resources>

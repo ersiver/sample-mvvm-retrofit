@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="2dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/posterImageView"
+            android:contentDescription="@string/contentDesc"
+            android:layout_width="80dp"
+            android:layout_height="100dp" />
+
+        <RelativeLayout
+            android:id="@+id/previewLt"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/posterImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleTextVIew"
+                android:layout_marginStart="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:id="@+id/parenthesis_left"
+                android:layout_marginStart="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/titleTextVIew"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:text="@string/parenthesis_left"
+                />
+            <TextView
+                android:id="@+id/yearTextVIew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/parenthesis_left"
+                android:layout_below="@id/titleTextVIew"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:id="@+id/parenthesis_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/yearTextVIew"
+                android:layout_below="@id/titleTextVIew"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:text="@string/parenthesis_right"
+                />
+
+            <ImageView
+                android:id="@+id/ratingImageView"
+                android:layout_marginStart="12dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_rating"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/yearTextVIew"
+                android:contentDescription="@string/contentDesc"
+                />
+
+            <TextView
+                android:id="@+id/ratingTextVIew"
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ratingImageView"
+                android:layout_below="@id/yearTextVIew"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/separator1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/posterImageView">
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
