@@ -32,7 +32,6 @@ public class MovieViewModel extends AndroidViewModel {
             }
         });
     }
-
     public LiveData<List<Movie>> getSavedMovies() {
         return movieList;
     }

@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
     private static final String TMDB_BASE_URL = "http://api.themoviedb.org/3/";
     private static final String API_KEY = "xxxxxxxxxxxxxxxxxx"; //Enter your API_KEY
+
     private static final int PAGE_LIMIT = 1; //20 results per phrase
     private MoviesAPI moviesAPI;
     private Retrofit retrofit;

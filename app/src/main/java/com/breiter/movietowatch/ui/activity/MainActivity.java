@@ -1,6 +1,7 @@
 package com.breiter.movietowatch.ui.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.breiter.movietowatch.R;
 import com.breiter.movietowatch.data.model.Movie;
 import com.breiter.movietowatch.ui.adapter.MovieAdapter;
-import com.breiter.movietowatch.ui.util.ItemTouchRemover;
+import com.breiter.movietowatch.ui.util.ItemSwipeHelper;
 import com.breiter.movietowatch.ui.viewmodel.MovieViewModel;
 import com.google.gson.Gson;
 
@@ -85,11 +86,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //4
-    private void swipeToDeleteMovie() {
-        new ItemTouchHelper(new ItemTouchRemover(movieViewModel, movieAdapter, getApplicationContext()))
-                .attachToRecyclerView(savedMoviesRecyclerView);
-    }
+    private void swipeToDeleteMovie(){
+        ItemSwipeHelper itemSwipeHelper = new ItemSwipeHelper(this, savedMoviesRecyclerView) {
 
+            @Override
+            public void instantiateUnderlayButton(RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons) {
+                underlayButtons.add(new UnderlayButton(
+                        getApplicationContext(),
+                        R.drawable.ic_delete,
+                        Color.parseColor("#FF3C30"), //red
+                        new UnderlayButtonClickListener() {
+                            @Override
+                            public void onClick(int pos) {
+                                movieViewModel.deleteMovie(movieAdapter.getMovieAt(pos));
+                            }
+                        }
+                ));
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemSwipeHelper);
+        itemTouchHelper.attachToRecyclerView(savedMoviesRecyclerView);
+    }
 
     //5
     private void searchMovie(ImageView searchImageView) {
