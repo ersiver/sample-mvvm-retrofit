@@ -27,6 +27,6 @@ public interface MovieDao {
     LiveData<List<Movie>> getAllMovies();
 
 
-    @Query("SELECT * FROM movie_table where id = :id LIMIT 1")
-    LiveData<List<Movie>> getMovieById(int id);
+    @Query("SELECT * FROM movie_table WHERE id = :id")
+    LiveData<Movie> getMovieById(int id);
 }

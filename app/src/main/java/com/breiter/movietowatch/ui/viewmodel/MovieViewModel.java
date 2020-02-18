@@ -52,7 +52,7 @@ public class MovieViewModel extends AndroidViewModel {
         return movieRepository.searchMovie(query);
     }
 
-    public LiveData<List<Movie>> getMovieById(int id) {
+    public LiveData<Movie> getMovieById(int id) {
         return movieRepository.getMovieById(id);
     }
 }

@@ -55,7 +55,7 @@ public class MovieRepository {
  }
 
     //Get movie by ID
-    public LiveData<List<Movie>> getMovieById(int id) {
+    public LiveData<Movie> getMovieById(int id) {
         return movieDao.getMovieById(id);
     }
 

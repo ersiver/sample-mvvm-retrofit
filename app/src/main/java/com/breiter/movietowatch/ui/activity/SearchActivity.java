@@ -124,11 +124,12 @@ public class SearchActivity extends AppCompatActivity {
         final Gson gson = new Gson();
         final String[] myJson = new String[1];
 
-        movieViewModel.getMovieById(movie.getId()).observe(this, new Observer<List<Movie>>() {
+        movieViewModel.getMovieById(movie.getId()).observe(this, new Observer<Movie>() {
             @Override
-            public void onChanged(List<Movie> movieList) {
-                if (!movieList.isEmpty() && movieList.get(0) != null)
-                    myJson[0] = gson.toJson(movieList.get(0));
+            public void onChanged(Movie aMovie) {
+
+                if (aMovie != null)
+                    myJson[0] = gson.toJson(aMovie);
                 else
                     myJson[0] = gson.toJson(movie);
 
