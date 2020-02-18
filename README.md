@@ -5,4 +5,4 @@ An Android app that lets you search a movie by title, read the movie details and
 
 ![1_search](https://user-images.githubusercontent.com/58771510/74327978-09492880-4d85-11ea-8d1a-7ddb506997c2.PNG)![3_add](https://user-images.githubusercontent.com/58771510/74327996-1108cd00-4d85-11ea-95c9-f08296d2c13e.PNG)
 ![2_details](https://user-images.githubusercontent.com/58771510/74327987-0e0ddc80-4d85-11ea-917b-ac04d145e7bc.PNG)![4_savedList](https://user-images.githubusercontent.com/58771510/74328004-136b2700-4d85-11ea-9cd3-e60c34fe0f82.PNG)
-![5_remove](https://user-images.githubusercontent.com/58771510/74328012-16661780-4d85-11ea-806f-99153808631e.PNG)
+![5_remove](https://user-images.githubusercontent.com/58771510/74537697-85cd3a00-4f32-11ea-83b4-002106b681b0.PNG)
