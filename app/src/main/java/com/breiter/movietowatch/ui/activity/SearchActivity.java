@@ -40,8 +40,6 @@ public class SearchActivity extends AppCompatActivity {
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();
 
-        movieViewModel = new ViewModelProvider(this).get(MovieViewModel.class);
-
         bindViews();                          //1
         displayListWhileTyping(queryEditText);//2
         clickToSearchMovie(searchImageView);  //3
@@ -100,6 +98,7 @@ public class SearchActivity extends AppCompatActivity {
 
     //3b
     private void getMovieList(String query) {
+        movieViewModel = new ViewModelProvider(this).get(MovieViewModel.class);
         movieViewModel.searchMovie(query).observe(this, new Observer<List<Movie>>() {
             @Override
             public void onChanged(List<Movie> movies) {

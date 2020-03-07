@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "movie_table")
-public class Movie{
+public class Movie {
 
     @PrimaryKey()
     private int id;

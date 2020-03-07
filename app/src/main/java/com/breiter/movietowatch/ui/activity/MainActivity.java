@@ -23,7 +23,6 @@ import com.google.gson.Gson;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     private MovieViewModel movieViewModel;
     private ImageView searchImageView;
     private MovieAdapter movieAdapter;
@@ -86,11 +85,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //4
-    private void swipeToDeleteMovie(){
+    private void swipeToDeleteMovie() {
         ItemSwipeHelper itemSwipeHelper = new ItemSwipeHelper(this, savedMoviesRecyclerView) {
 
             @Override
-            public void instantiateUnderlayButton(RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons) {
+            public void initUnderlayButton(RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons) {
                 underlayButtons.add(new UnderlayButton(
                         getApplicationContext(),
                         R.drawable.ic_delete,

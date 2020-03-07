@@ -18,8 +18,8 @@ public abstract class MovieDatabase extends RoomDatabase {
 
     public abstract MovieDao movieDao();
 
-    public static synchronized MovieDatabase getInstance(Context context){
-        if(instance == null) {
+    public static synchronized MovieDatabase getInstance(Context context) {
+        if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     MovieDatabase.class, "movie_table")
                     .fallbackToDestructiveMigration()
@@ -28,7 +28,7 @@ public abstract class MovieDatabase extends RoomDatabase {
         return instance;
     }
 
-    private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback(){
+    private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
 
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
@@ -40,7 +40,8 @@ public abstract class MovieDatabase extends RoomDatabase {
 
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private MovieDao movieDao;
-         PopulateDbAsyncTask(MovieDatabase movieDatabase) {
+
+        PopulateDbAsyncTask(MovieDatabase movieDatabase) {
             movieDao = movieDatabase.movieDao();
         }
 

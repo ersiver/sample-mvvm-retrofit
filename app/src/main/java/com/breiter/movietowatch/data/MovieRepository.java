@@ -21,7 +21,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MovieRepository {
-
     private MovieDao movieDao;
     private RetrofitClient retrofitClient;
 
@@ -48,12 +47,12 @@ public class MovieRepository {
 
             @Override
             public void onFailure(@NonNull Call<MovieResponse> call, @NonNull Throwable t) {
-                 Log.d("MovieRepository.java", "Remember to add your KEY in your RetrofitClient file");
+                Log.d("MovieRepository.java", "Remember to add your KEY in your RetrofitClient file");
 
             }
         });
         return mMovieList;
- }
+    }
 
     //Get movie by ID
     public LiveData<Movie> getMovieById(int id) {
@@ -85,7 +84,7 @@ public class MovieRepository {
     private static class SaveMovieAsyncTask extends AsyncTask<Movie, Void, Void> {
         private MovieDao movieDao;
 
-         SaveMovieAsyncTask(MovieDao movieDao) {
+        SaveMovieAsyncTask(MovieDao movieDao) {
             this.movieDao = movieDao;
         }
 
@@ -100,7 +99,7 @@ public class MovieRepository {
     private static class DeleteMovieAsyncTask extends AsyncTask<Movie, Void, Void> {
         private MovieDao movieDao;
 
-         DeleteMovieAsyncTask(MovieDao movieDao) {
+        DeleteMovieAsyncTask(MovieDao movieDao) {
             this.movieDao = movieDao;
         }
 
@@ -115,7 +114,7 @@ public class MovieRepository {
     private static class UpdateMovieAsyncTask extends AsyncTask<Movie, Void, Void> {
         private MovieDao movieDao;
 
-         UpdateMovieAsyncTask(MovieDao movieDao) {
+        UpdateMovieAsyncTask(MovieDao movieDao) {
             this.movieDao = movieDao;
         }
 

@@ -18,10 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder> {
+    private static final String TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
+
     private OnItemClickListener listener;
     private List<Movie> movieList = new ArrayList<>();
     private Context context;
-    private static final String TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/w500/";
 
     public void setMovies(List<Movie> movieList) {
         this.movieList = movieList;
@@ -41,10 +42,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
     public void onBindViewHolder(@NonNull MovieAdapter.MovieHolder holder, int position) {
         Movie movie = movieList.get(position);
 
-        String title = movie.getTitle()!=null ? movie.getTitle() : "";
+        String title = movie.getTitle() != null ? movie.getTitle() : "";
         holder.titleTextVIew.setText(title);
 
-        String posterPath = movie.getPosterPath() !=null ? TMDB_IMAGE_URL+movie.getPosterPath() : "";
+        String posterPath = movie.getPosterPath() != null ? TMDB_IMAGE_URL + movie.getPosterPath() : "";
         Glide.with(context).load(posterPath).into(holder.posterImageView);
 
         String rating = movie.getRating() != null ? movie.getRating().toString() : "";
@@ -54,7 +55,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
     }
 
     private String getReleasedYear(Movie movie) {
-        String fullDate = movie.getReleaseDate()!= null ? movie.getReleaseDate() : "";
+        String fullDate = movie.getReleaseDate() != null ? movie.getReleaseDate() : "";
         if (fullDate.length() > 4)
             return fullDate.substring(0, 4);
         else return fullDate;
@@ -69,7 +70,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
         return movieList.get(position);
     }
 
-    public void clearMovieList(){
+    public void clearMovieList() {
         movieList.clear();
         notifyDataSetChanged();
     }

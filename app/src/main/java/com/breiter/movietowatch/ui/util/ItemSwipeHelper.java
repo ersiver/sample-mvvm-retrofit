@@ -151,7 +151,7 @@ public abstract class ItemSwipeHelper extends ItemTouchHelper.SimpleCallback {
                 List<UnderlayButton> buffer = new ArrayList<>();
 
                 if (!buttonsBuffer.containsKey(pos)) {
-                    instantiateUnderlayButton(viewHolder, buffer);
+                    initUnderlayButton(viewHolder, buffer);
                     buttonsBuffer.put(pos, buffer);
                 } else {
                     buffer = buttonsBuffer.get(pos);
@@ -203,7 +203,7 @@ public abstract class ItemSwipeHelper extends ItemTouchHelper.SimpleCallback {
         itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
-    public abstract void instantiateUnderlayButton(RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons);
+    public abstract void initUnderlayButton(RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons);
 
     public static class UnderlayButton {
         private final static int CORNER_RADIUS = 5;
