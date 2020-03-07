@@ -11,7 +11,7 @@ import androidx.core.app.NavUtils;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.breiter.movietowatch.R;
-import com.breiter.movietowatch.data.model.Movie;
+import com.breiter.movietowatch.data.entity.Movie;
 import com.breiter.movietowatch.ui.viewmodel.MovieViewModel;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;

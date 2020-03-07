@@ -2,6 +2,7 @@ package com.breiter.movietowatch.data;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -9,8 +10,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.breiter.movietowatch.data.db.MovieDao;
 import com.breiter.movietowatch.data.db.MovieDatabase;
-import com.breiter.movietowatch.data.model.Movie;
-import com.breiter.movietowatch.data.model.MovieResponse;
+import com.breiter.movietowatch.data.entity.Movie;
+import com.breiter.movietowatch.data.net.MovieResponse;
 import com.breiter.movietowatch.data.net.RetrofitClient;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class MovieRepository {
 
     //Get Movies by query
     public LiveData<List<Movie>> searchMovie(String query) {
-        final MutableLiveData<List<Movie>> mMovieList = new MutableLiveData();
+        final MutableLiveData<List<Movie>> mMovieList = new MutableLiveData<>();
 
         Call<MovieResponse> call = retrofitClient.searchMovies(query);
         call.enqueue(new Callback<MovieResponse>() {
@@ -40,7 +41,6 @@ public class MovieRepository {
             public void onResponse(@NonNull Call<MovieResponse> call, @NonNull Response<MovieResponse> response) {
                 if (response.isSuccessful()) {
                     MovieResponse movieResponse = response.body();
-
                     if (movieResponse != null)
                         mMovieList.setValue(movieResponse.getResults());
                 }
@@ -48,6 +48,7 @@ public class MovieRepository {
 
             @Override
             public void onFailure(@NonNull Call<MovieResponse> call, @NonNull Throwable t) {
+                 Log.d("MovieRepository.java", "Remember to add your KEY in your RetrofitClient file");
 
             }
         });

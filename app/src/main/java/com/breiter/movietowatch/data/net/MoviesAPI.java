@@ -1,7 +1,5 @@
 package com.breiter.movietowatch.data.net;
 
-import com.breiter.movietowatch.data.model.MovieResponse;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

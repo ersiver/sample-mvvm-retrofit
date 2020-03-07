@@ -8,7 +8,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.breiter.movietowatch.data.model.Movie;
+import com.breiter.movietowatch.data.entity.Movie;
 import java.util.List;
 
 @Dao

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.breiter.movietowatch.R;
-import com.breiter.movietowatch.data.model.Movie;
+import com.breiter.movietowatch.data.entity.Movie;
 import com.breiter.movietowatch.ui.adapter.MovieAdapter;
 import com.breiter.movietowatch.ui.util.ItemSwipeHelper;
 import com.breiter.movietowatch.ui.viewmodel.MovieViewModel;

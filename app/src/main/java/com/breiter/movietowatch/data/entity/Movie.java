@@ -1,4 +1,4 @@
-package com.breiter.movietowatch.data.model;
+package com.breiter.movietowatch.data.entity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

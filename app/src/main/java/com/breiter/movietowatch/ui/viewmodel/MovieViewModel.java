@@ -9,7 +9,7 @@ import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.Observer;
 
 import com.breiter.movietowatch.data.MovieRepository;
-import com.breiter.movietowatch.data.model.Movie;
+import com.breiter.movietowatch.data.entity.Movie;
 
 import java.util.List;
 

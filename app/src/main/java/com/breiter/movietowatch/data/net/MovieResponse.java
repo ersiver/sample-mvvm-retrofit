@@ -1,4 +1,6 @@
-package com.breiter.movietowatch.data.model;
+package com.breiter.movietowatch.data.net;
+
+import com.breiter.movietowatch.data.entity.Movie;
 
 import java.util.List;
 

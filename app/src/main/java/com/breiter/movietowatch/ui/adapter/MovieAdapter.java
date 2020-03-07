@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.breiter.movietowatch.R;
-import com.breiter.movietowatch.data.model.Movie;
+import com.breiter.movietowatch.data.entity.Movie;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
